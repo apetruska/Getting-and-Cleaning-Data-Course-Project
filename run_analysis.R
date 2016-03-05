@@ -48,4 +48,4 @@
 	summary <- aggregate(datafinal[,3:ncol(datafinal)],
 		by=list(subject = datafinal$subject,activity = datafinal$activity),
 		mean)
-	write.table(summary, "tidied_data.txt")	
+	write.table(summary, "tidied_data.txt", row.name=FALSE)	
