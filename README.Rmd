@@ -1,0 +1,21 @@
+#README for run_analysis.R
+
+#Summary
+run_analysis.R creates a tidy data set from the data at: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip.
+Details on the data and how it was collected, units, etc can be found at: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+#Files required
+The following files should be  in your current working directory:
+*X_test.txt
+*X_train.txt
+*y_test.txt
+*y_train.txt
+*subject_test.txt
+*subject_train.txt
+*features.txt
+
+#Output
+run_analysis.R will read the files above and create a tidy data set.
+tidied_data.txt will be output which will contain the subject identifier,
+activity name, and the mean of each mean and std column from the original data
+set for the given subject and activity.

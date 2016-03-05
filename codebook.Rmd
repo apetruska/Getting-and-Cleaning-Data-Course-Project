@@ -1,0 +1,21 @@
+#Summary
+run_analysis.R creates a tidy data set from the data at: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip.
+Details on the data and how it was collected, units, etc can be found at: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+#Data used
+run_analysis.R reads in raw numeric data files: X_test.txt, X_train.txt;
+the activity label files: y_test.txt, y_train.txt; the subject identifier files:
+subject_test.txt, subject_train.txt; and the column names for the X files contained in features.txt
+
+#Process
+After reading in all the files and attaching the column names from features.txt to
+both X files, both the test and train data files are subset to only include the 
+columns with mean or std in their name. The activity labels from the y files are then
+appended onto their respective X file. Next, the resulting test and train data sets
+are merged. At this point,it was noted that mean frequency data was included in
+the data set, these were removed. 
+
+With the complete data set, the activity numbers were replaced with the corresponding
+ name (i.e. the number 1 with walking). Finally, a new data frame was created which
+is the mean of each column for each subject and activity. This data frame was 
+written to tidied_data.txt.
